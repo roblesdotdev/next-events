@@ -6,22 +6,32 @@
     "dev": "next dev --turbo",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "typecheck": "tsc -b",
+    "prettier": "prettier \"**/*.+(js|jsx|css|ts|tsx|cjs|mjs)\"",
+    "format": "pnpm prettier --list-different",
+    "format:write": "pnpm prettier --write",
+    "validate": "run-s typecheck lint format",
+    "prepare": "husky"
   },
   "dependencies": {
+    "next": "15.0.0-rc.0",
     "react": "19.0.0-rc-f994737d14-20240522",
-    "react-dom": "19.0.0-rc-f994737d14-20240522",
-    "next": "15.0.0-rc.0"
+    "react-dom": "19.0.0-rc-f994737d14-20240522"
   },
   "devDependencies": {
-    "typescript": "^5",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
-    "postcss": "^8",
-    "tailwindcss": "^3.4.1",
     "eslint": "^8",
-    "eslint-config-next": "15.0.0-rc.0"
+    "eslint-config-next": "15.0.0-rc.0",
+    "husky": "^9.1.5",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8",
+    "prettier": "^3.3.3",
+    "prettier-plugin-tailwindcss": "^0.6.6",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
   },
   "engines": {
     "node": ">=20.17.0"
