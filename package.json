@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev --turbo",
     "build": "next build",
+    "postinstall": "prisma generate",
     "start": "next start",
     "lint": "next lint",
     "typecheck": "tsc -b",
@@ -15,6 +16,9 @@
     "prepare": "husky"
   },
   "dependencies": {
+    "@libsql/client": "^0.10.0",
+    "@prisma/adapter-libsql": "^5.19.1",
+    "@prisma/client": "^5.19.1",
     "next": "15.0.0-rc.0",
     "react": "19.0.0-rc-f994737d14-20240522",
     "react-dom": "19.0.0-rc-f994737d14-20240522"
@@ -30,6 +34,7 @@
     "postcss": "^8",
     "prettier": "^3.3.3",
     "prettier-plugin-tailwindcss": "^0.6.6",
+    "prisma": "^5.19.1",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
   },
